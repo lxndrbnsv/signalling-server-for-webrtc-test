@@ -1,9 +1,11 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, emit, join_room
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 app.secret_key = "very_secret"
+CORS(app)
 socket_connection = SocketIO(app, cors_allowed_origins="*")
 
 
